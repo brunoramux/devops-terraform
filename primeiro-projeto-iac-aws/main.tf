@@ -18,3 +18,13 @@ module "cloudfront" {
     module.s3
   ]
 }
+
+module "sqs" {
+  source = "terraform-aws-modules/sqs/aws"
+  name = "rocketseat-sqs"
+  create_dlg = true
+
+  tags = {
+    Iac = true
+  }
+}
